@@ -5,7 +5,7 @@
     <div class="container">
       <h2>EEG 抑郁症诊断</h2>
 
-      <UploadCard @uploaded="handleUpload" />
+      <UploadCard @file-selected="handleUpload" />
 
       <DiagnoseResultCard v-if="result" :result="result" />
     </div>
@@ -13,10 +13,10 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import NavBar from '../components/NavBar.vue'
 import UploadCard from '../components/UploadCard.vue'
 import DiagnoseResultCard from '../components/DiagnoseResultCard.vue'
-import { ref } from 'vue'
 import { predictEEG } from '../api/eeg'
 
 const result = ref(null)

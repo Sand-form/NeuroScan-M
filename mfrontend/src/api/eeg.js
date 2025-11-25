@@ -1,4 +1,4 @@
-import request from './index'
+import request from './request'
 
 export const predictEEG = (file) => {
     const formData = new FormData()
